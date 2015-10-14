@@ -28,6 +28,7 @@ nav {
   width: 100%;
   height: 170px;
   background: #fff;
+  text-align:center;
   z-index: 1;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -57,7 +58,9 @@ nav header .container {
   max-width: 1060px;
   height: 100%;
   margin: 0 auto;
-  border-bottom: 1px solid #d9d9d9;
+  padding: 0;
+  text-align: left;
+  /*border-bottom: 1px solid #d9d9d9;*/
 }
 
 nav header img {
@@ -97,7 +100,7 @@ nav header .global .utility {
   text-align: center;
   text-transform: uppercase;
   color: #d9d9d9;
-  padding: 42px 0;
+  padding: 41px 0;
   border-left: 1px solid #d9d9d9;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -105,7 +108,7 @@ nav header .global .utility {
 }
 
 nav.shrink header .global .utility {
-  padding: 14px 0;
+  padding: 13px 0;
   line-height: 2.5em;
 }
 
@@ -124,10 +127,11 @@ nav header .global .utility:hover {
 }
 
 nav .main {
+  display:inline-block;
   width: 100%;
   max-width: 1060px;
   height: 70px;
-  margin: 0 auto;
+  margin: -10px auto;
   padding: 0;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -141,8 +145,8 @@ nav.shrink .main {
 .main .section {
   display: inline-block;
   width: auto;
-  height: 30px;
-  padding: 20px;
+  height: 100%;
+  padding: 18px 20px;
   line-height: 2.5em;
   margin: auto auto;
   vertical-align: middle;
@@ -157,8 +161,61 @@ nav.shrink .main {
 
 nav.shrink .main .section {
   height: 26px;
-  padding: 7px 20px;
+  padding: 1px 20px;
   line-height: 2.1em;
+}
+
+.subnav {
+  width: 100%;
+  height: 72px;
+  background: #f2f2f2;
+  text-align: center;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.subnav .main {
+  display:inline-block;
+  width: 100%;
+  max-width: 1060px;
+}
+
+.link {
+  color: #62ad3d !important;
+}
+
+nav.shrink .indicator {
+  position: relative;
+  bottom: 0;
+  width: auto;
+  height: 5px;
+  background: #62ad3d;
+  z-index:1;
+  opacity: 0;
+  display: none;
+}
+
+nav.shrink .indicator.active {
+  opacity: 1;
+  display:block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.affix-top {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.affix {
+  top: 100px;
+  width: 100%;
+  z-index: 1;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .content {
@@ -176,7 +233,7 @@ nav.shrink .main .section {
 
 .content .other {
   width: 100%;
-  height: 1600px;
+  height: 800px;
   text-align: center;
 }
 
