@@ -1,6 +1,8 @@
 function showData(data) {
 	var newContent = '';
 
+	console.log(newContent);
+	
 	for (var i = 0; i < data.length; i++) {
 		newContent += '<div class="vehicle">';
 		newContent += data[i].VEHICLE;
@@ -8,4 +10,5 @@ function showData(data) {
 	}
 
 	document.getElementById('body').innerHTML = newContent;
+
 }
