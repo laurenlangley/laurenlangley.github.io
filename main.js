@@ -1,8 +1,6 @@
 $(document).ready(function () {
 
-    var ajax_call = function() {
-    //your jQuery ajax code
-        function loadJSON(callback) {
+    var ajax_call = function loadJSON(callback) {
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
@@ -46,6 +44,7 @@ $(document).ready(function () {
 
     };
 
+    ajax_call();
     var interval = 1000 * 60 * 1; // where X is your every X minutes
 
     setInterval(ajax_call, interval);
