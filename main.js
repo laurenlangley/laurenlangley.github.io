@@ -45,7 +45,7 @@ $(document).ready(function () {
             // dataType: 'json',
             // jsonpCallback: 'jsonCallback',
             contentType: "application/json",
-            dataType: 'jsonp'
+            dataType: 'jsonp',
             success: function(data) {
                 //$('body').html(data);
                 $.each(data, function(index, element) {
