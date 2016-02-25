@@ -43,9 +43,14 @@ $(document).ready(function () {
             success: function(data) {
                 //$('body').html(data);
                 $.each(data, function(index, element) {
-                    $('body').append($('<div>', {
-                        text: element.VEHICLE
-                    }));
+                    // $('body').append($('<div>', {
+                    //     text: element.VEHICLE
+                    // }));
+
+                    div = $('<div>');
+                    div.append("Bus " + jsonresponse[i].VEHICLE + " is at " + jsonresponse[i].LATITUDE + " and " + jsonresponse[i].LONGITUDE + " at " + jsonresponse[i].MSGTIME);
+                    $('body').append(div);
+                    
                 });
             },
             complete: function() {
