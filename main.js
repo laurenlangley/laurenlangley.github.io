@@ -41,7 +41,12 @@ $(document).ready(function () {
             data: null,
             dataType: 'json',
             success: function(data) {
-                $('body').html(data);
+                //$('body').html(data);
+                $.each(data, function(index, element) {
+                    $('body').append($('<div>', {
+                        text: element.VEHICLE
+                    }));
+                });
             },
             complete: function() {
                 // Schedule the next request when the current one's complete
