@@ -8,20 +8,18 @@ $(document).ready(function () {
         xobj.overrideMimeType("application/json");
         xobj.open('GET', 'data.json', true);
 
-        // register the event handler
-        xobj.addEventListener('load', function() {
-            if(xobj.status === 200){
-                //alert("We got data: " + xobj.responseText);
-                callback(xobj.responseText);
-            }
-        },false)
-
-        // xobj.onreadystatechange = function() {
-        //     if (xobj.readyState == 4 && xobj.status == "200") {
-        //         // .open will NOT return a value but simply returns undefined in async mode so use a callback
+        // xobj.addEventListener('load', function() {
+        //     if(xobj.status === 200){
         //         callback(xobj.responseText);
         //     }
-        // }
+        // },false)
+
+        xobj.onreadystatechange = function() {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+                // .open will NOT return a value but simply returns undefined in async mode so use a callback
+                callback(xobj.responseText);
+            }
+        }
         xobj.send(null);
 
         }
