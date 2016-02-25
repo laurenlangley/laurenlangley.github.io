@@ -34,16 +34,20 @@ $(document).ready(function () {
     //     return json;
     // })(); 
 
+
+
+
+
     (function worker() {
-        var url = 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus';
+        var url = 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus?callback=?';
         $.ajax({
             type: 'GET',
-            // url: 'data.json',
+            url: 'data.json',
             // url: 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus',
-            url: url,
             data: null,
+            jsonpCallback: 'showData',
             // dataType: 'json',
-            // jsonpCallback: 'jsonCallback',
+            // jsonpCallback: 'data',
             contentType: "application/json",
             dataType: 'jsonp',
             success: function(data) {
@@ -62,6 +66,9 @@ $(document).ready(function () {
             complete: function() {
                 // Schedule the next request when the current one's complete
                 setTimeout(worker, 100000);
+            },
+            error: function(e) {
+                console.log(e.message);
             }
         });
     })();
