@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var ajax_call = function loadJSON(callback) {
+    function loadJSON(callback) {
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
@@ -19,30 +19,27 @@ $(document).ready(function () {
             }
         }
         xobj.send(null);
-
-        // Call to function with anonymous callback
-        loadJSON(function(response) {
-            // Do Something with the response e.g.
-            jsonresponse = JSON.parse(response);
-
-            // Assuming json data is wrapped in square brackets as Drew suggests
-            console.log(jsonresponse)
-            //console.log(jsonresponse[0].ROUTE);
-
-            var section;
-
-            for (var i = 0; i < jsonresponse.length; i++) {
-                section = $('<section>');
-                section.append("<div>Bus " + jsonresponse[i].VEHICLE + " is at " + jsonresponse[i].LATITUDE + " and " + jsonresponse[i].LONGITUDE + " at " + jsonresponse[i].MSGTIME + + "</div>");
-                $('body').append(section);
-            }
-            
-        });
-
     }
 
-    //ajax_call();
-    var interval = 1000 * 60 * 1;
-    setInterval(ajax_call, interval);
+    // Call to function with anonymous callback
+    loadJSON(function(response) {
+        // Do Something with the response e.g.
+        jsonresponse = JSON.parse(response);
+
+        // Assuming json data is wrapped in square brackets as Drew suggests
+        console.log(jsonresponse)
+        //console.log(jsonresponse[0].ROUTE);
+
+        var section;
+
+        for (var i = 0; i < jsonresponse.length; i++) {
+            section = $('<section>');
+            section.append("<div>Bus " + jsonresponse[i].VEHICLE + " is at " + jsonresponse[i].LATITUDE + " and " + jsonresponse[i].LONGITUDE + " at " + jsonresponse[i].MSGTIME + + "</div>");
+            $('body').append(section);
+        }
+        
+    });
+
+    var refreshInterval = setInterval(loadJSON, 30 * 1000);
 
 });
