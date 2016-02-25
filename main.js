@@ -46,6 +46,6 @@ $(document).ready(function () {
             
         });
 
-    }, 1000 * 1 * X); // where X is your every X minutes
+    }, 1000 * 60 * 1); // where X is your every X minutes
 
 });
