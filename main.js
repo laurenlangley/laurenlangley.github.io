@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    var resource_timer;
-
     function loadJSON(callback) {
 
         var xobj = new XMLHttpRequest();
@@ -42,6 +40,6 @@ $(document).ready(function () {
         
     });
 
-    resource_timer = setTimeout(loadJSON, 10000);
+    setTimeout(loadJSON, 10000);
 
 });
