@@ -37,7 +37,8 @@ $(document).ready(function () {
     (function worker() {
         $.ajax({
             type: 'GET',
-            url: 'data.json',
+            // url: 'data.json',
+            url: 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus',
             data: null,
             dataType: 'json',
             success: function(data) {
