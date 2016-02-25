@@ -6,7 +6,7 @@ $(document).ready(function () {
         xobj.overrideMimeType("application/json");
         xobj.open('GET', 'data.json', true);
         xobj.onreadystatechange = function GetData() {
-            if (req_fifo.readyState != 4 || req_fifo.status != 200) {
+            if (xobj.readyState != 4 || xobj.status != 200) {
                 return;
             }
             else if (xobj.readyState == 4 && xobj.status == "200") {
