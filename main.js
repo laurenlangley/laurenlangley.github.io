@@ -48,9 +48,9 @@ $(document).ready(function () {
                     // }));
 
                     div = $('<div>');
-                    div.append("Bus " + jsonresponse[i].VEHICLE + " is at " + jsonresponse[i].LATITUDE + " and " + jsonresponse[i].LONGITUDE + " at " + jsonresponse[i].MSGTIME);
+                    div.append("Bus " + element.VEHICLE + " is at " + element.LATITUDE + " and " + element.LONGITUDE + " at " + element.MSGTIME);
                     $('body').append(div);
-                    
+
                 });
             },
             complete: function() {
