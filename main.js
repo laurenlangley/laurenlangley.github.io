@@ -5,35 +5,24 @@ $(document).ready(function () {
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
         xobj.open('GET', 'data.json', true);
-        xobj.onreadystatechange = function GetData() {
-            if (xobj.readyState != 4 || xobj.status != 200) {
-                return;
-            }
-            else if (xobj.readyState == 4 && xobj.status == "200") {
 
-                // .open will NOT return a value but simply returns undefined in async mode so use a callback
+        // register the event handler
+        xobj.addEventListener('load', function() {
+            if(xobj.status === 200){
+                //alert("We got data: " + xobj.responseText);
                 callback(xobj.responseText);
             }
-            setTimeout("loadJSON(callback)", 10000);
-            return;
-        }
+        },false)
+
+        // xobj.onreadystatechange = function() {
+        //     if (xobj.readyState == 4 && xobj.status == "200") {
+        //         // .open will NOT return a value but simply returns undefined in async mode so use a callback
+        //         callback(xobj.responseText);
+        //     }
+        // }
         xobj.send(null);
 
     }
-
-    // Create the XHR object to do GET to /data resource  
-    //var xhr = new XMLHttpRequest();
-    //xhr.open("GET","data",true);
-
-    // register the event handler
-    //xhr.addEventListener('load',function(){
-    //  if(xhr.status === 200){
-    //      alert("We got data: " + xhr.response);
-    //  }
-    //},false) 
-
-    // perform the work
-    //xhr.send();
 
 
     // Call to function with anonymous callback
