@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    setInterval(function() {
+    var ajax_call = function() {
     //your jQuery ajax code
         function loadJSON(callback) {
 
@@ -46,6 +46,10 @@ $(document).ready(function () {
             
         });
 
-    }, 1000 * 60 * 1); // where X is your every X minutes
+    };
+
+    var interval = 1000 * 60 * 1; // where X is your every X minutes
+
+    setInterval(ajax_call, interval);
 
 });
