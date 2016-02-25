@@ -41,9 +41,8 @@ $(document).ready(function () {
 
     }
 
-    ajax_call();
-    var interval = 1000 * 60 * 1; // where X is your every X minutes
-
+    //ajax_call();
+    var interval = 1000 * 60 * 1;
     setInterval(ajax_call, interval);
 
 });
