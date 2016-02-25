@@ -34,73 +34,41 @@ $(document).ready(function () {
     //     return json;
     // })(); 
 
-    // (function worker() {
-    //     $.ajax({
-    //         url: 'ajax/test.html', 
-    //         success: function(data) {
-    //             $('.result').html(data);
-    //         },
-    //         complete: function() {
-    //             // Schedule the next request when the current one's complete
-    //             setTimeout(worker, 5000);
-    //         }
-    //     });
-    // })();
+    (function worker() {
+        $.ajax({
+            type: 'GET',
+            url: 'data.json',
+            data: null,
+            dataType: 'json',
+            success: function(data) {
+                $('body').html(data);
+            },
+            complete: function() {
+                // Schedule the next request when the current one's complete
+                setTimeout(worker, 10000);
+            }
+        });
+    })();
 
-    var exampleSocket = new WebSocket("ws://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus");
 
-    exampleSocket.onmessage = function(response) {
+    // var exampleSocket = new WebSocket("ws://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus");
 
-        jsonresponse = JSON.parse(response);
+    // exampleSocket.onmessage = function(response) {
 
-        // Assuming json data is wrapped in square brackets as Drew suggests
-        console.log(jsonresponse)
-        //console.log(jsonresponse[0].ROUTE);
+    //     jsonresponse = JSON.parse(response);
 
-        var section;
+    //     var section;
 
-        for (var i = 0; i < jsonresponse.length; i++) {
-            section = $('<section>');
-            section.append("<div>Bus " + jsonresponse[i].VEHICLE + " is at " + jsonresponse[i].LATITUDE + " and " + jsonresponse[i].LONGITUDE + " at " + jsonresponse[i].MSGTIME + + "</div>");
-            $('body').append(section);
-        }
+    //     for (var i = 0; i < jsonresponse.length; i++) {
+    //         section = $('<section>');
+    //         section.append("<div>Bus " + jsonresponse[i].VEHICLE + " is at " + jsonresponse[i].LATITUDE + " and " + jsonresponse[i].LONGITUDE + " at " + jsonresponse[i].MSGTIME + + "</div>");
+    //         $('body').append(section);
+    //     }
 
-        // var f = document.getElementById("body").contentDocument;
-        // var text = "";
-        // var msg = JSON.parse(event.data);
-        // var time = new Date(msg.MSGTIME);
-        // var timeStr = time.toLocaleTimeString();
+    // };
 
-        // switch(msg.type) {
-        //     case "id":
-        //       clientID = msg.id;
-        //       setUsername();
-        //       break;
-        //     case "username":
-        //       text = "<b>User <em>" + msg.VEHICLE + "</em> signed in at " + timeStr + "</b><br>";
-        //       break;
-        //     case "message":
-        //       text = "(" + timeStr + ") <b>" + msg.name + "</b>: " + msg.text + "<br>";
-        //       break;
-        //     case "rejectusername":
-        //       text = "<b>Your username has been set to <em>" + msg.name + "</em> because the name you chose is in use.</b><br>"
-        //       break;
-        //     case "userlist":
-        //       var ul = "";
-        //       for (i=0; i < msg.users.length; i++) {
-        //         ul += msg.users[i] + "<br>";
-        //       }
-        //       document.getElementById("body").innerHTML = ul;
-        //       break;
-        // }
+    // exampleSocket.close();
 
-        // if (text.length) {
-        //     f.write(text);
-        //     document.getElementById("body").contentWindow.scrollByPages(1);
-        // }
-    };
-
-    exampleSocket.close();
 
     // function loadJSON(callback) {
 
