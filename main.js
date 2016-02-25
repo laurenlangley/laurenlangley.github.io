@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     var resource_timer;
-    
+
     function loadJSON(callback) {
 
         var xobj = new XMLHttpRequest();
@@ -39,10 +39,9 @@ $(document).ready(function () {
             section.append("<div>Bus " + jsonresponse[i].VEHICLE + " is at " + jsonresponse[i].LATITUDE + " and " + jsonresponse[i].LONGITUDE + " at " + jsonresponse[i].MSGTIME + + "</div>");
             $('body').append(section);
         }
-
-        resource_timer = setTimeout(loadJSON, 10000);
         
     });
 
+    resource_timer = setTimeout(loadJSON, 10000);
 
 });
