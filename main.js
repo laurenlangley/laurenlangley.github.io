@@ -35,12 +35,17 @@ $(document).ready(function () {
     // })(); 
 
     (function worker() {
+        var url = 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus';
         $.ajax({
             type: 'GET',
-            url: 'data.json',
+            // url: 'data.json',
             // url: 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus',
+            url: url,
             data: null,
-            dataType: 'json',
+            // dataType: 'json',
+            // jsonpCallback: 'jsonCallback',
+            contentType: "application/json",
+            dataType: 'jsonp'
             success: function(data) {
                 //$('body').html(data);
                 $.each(data, function(index, element) {
