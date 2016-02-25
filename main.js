@@ -9,11 +9,10 @@ $(document).ready(function () {
             if (req_fifo.readyState != 4 || req_fifo.status != 200) {
                 return;
             }
-            else (xobj.readyState == 4 && xobj.status == "200") {
+            else if (xobj.readyState == 4 && xobj.status == "200") {
 
                 // .open will NOT return a value but simply returns undefined in async mode so use a callback
                 callback(xobj.responseText);
-
             }
             setTimeout("GetData()", 10000);
             return;
