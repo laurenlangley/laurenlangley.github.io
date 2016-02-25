@@ -14,7 +14,7 @@ $(document).ready(function () {
                 // .open will NOT return a value but simply returns undefined in async mode so use a callback
                 callback(xobj.responseText);
             }
-            setTimeout("GetData()", 10000);
+            setTimeout("loadJSON(callback)", 10000);
             return;
         }
         xobj.send(null);
