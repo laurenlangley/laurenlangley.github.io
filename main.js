@@ -37,8 +37,8 @@ $(document).ready(function () {
     (function worker() {
         $.ajax({
             type: 'GET',
-            // url: 'data.json',
-            url: 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus',
+            url: 'data.json',
+            // url: 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus',
             data: null,
             dataType: 'json',
             success: function(data) {
@@ -56,7 +56,7 @@ $(document).ready(function () {
             },
             complete: function() {
                 // Schedule the next request when the current one's complete
-                setTimeout(worker, 10000);
+                setTimeout(worker, 100000);
             }
         });
     })();
