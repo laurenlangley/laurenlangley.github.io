@@ -20,9 +20,6 @@ $(document).ready(function () {
         }
         xobj.send(null);
 
-        }
-
-
         // Call to function with anonymous callback
         loadJSON(function(response) {
             // Do Something with the response e.g.
@@ -42,7 +39,7 @@ $(document).ready(function () {
             
         });
 
-    };
+    }
 
     ajax_call();
     var interval = 1000 * 60 * 1; // where X is your every X minutes
