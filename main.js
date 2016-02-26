@@ -35,21 +35,18 @@ $(document).ready(function () {
     // })(); 
 
 
-
-
-
     (function worker() {
-        var url = 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus?callback=?';
+        // var url = 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus?callback=?';
         $.ajax({
             type: 'GET',
             url: 'data.json',
             // url: 'http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetAllBus',
             data: null,
-            jsonpCallback: 'showData',
+            // jsonpCallback: 'showData',
             // dataType: 'json',
             // jsonpCallback: 'data',
             contentType: "application/json",
-            dataType: 'jsonp',
+            // dataType: 'jsonp',
             success: function(data) {
                 //$('body').html(data);
                 $.each(data, function(index, element) {
