@@ -6,4 +6,29 @@ body {
     color: #fff;
     font-family: "museo-sans",sans-serif;
     font-size: 14px;
+    line-height: 1.5em;
+}
+
+div {
+    width:40%;
+    min-width:400px;
+    margin: 12% auto auto auto;
+    padding: 1.8em;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+h1 {
+    margin: 0.5em;
+    font-size: 2.4em;
+    line-height: 1em;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+img {
+    max-width: 136px;
+    margin:1em;
 }
